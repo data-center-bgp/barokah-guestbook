@@ -16,6 +16,8 @@ export const KEPERLUAN_OPTIONS = [
   "Meeting",
   "Audit",
   "Kunjungan Lapangan",
+  "Dinas",
+  "Pengiriman",
   "Lainnya",
 ] as const;
 

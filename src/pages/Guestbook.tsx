@@ -15,7 +15,7 @@ const Guestbook: React.FC = () => {
         .from("guest_book")
         .select("*")
         .order("created_at", { ascending: false })
-        .limit(50);
+        .limit(1);
 
       if (error) throw error;
 
