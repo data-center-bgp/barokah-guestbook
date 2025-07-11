@@ -21,4 +21,17 @@ export const KEPERLUAN_OPTIONS = [
   "Lainnya",
 ] as const;
 
+export const BUSINESS_UNIT_OPTIONS = [
+  "Corporate",
+  "Shipping",
+  "Shipyard",
+  "Shorebase",
+  "Fuel",
+  "Gas",
+  "TST",
+  "Supply Chain",
+  "Agro",
+];
+
 export type KeperluanType = (typeof KEPERLUAN_OPTIONS)[number];
+export type BusinessUnitType = (typeof BUSINESS_UNIT_OPTIONS)[number];

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { supabase } from "../utils/supabase";
-import { type GuestBookEntry, KEPERLUAN_OPTIONS } from "../types";
+import {
+  type GuestBookEntry,
+  KEPERLUAN_OPTIONS,
+  BUSINESS_UNIT_OPTIONS,
+} from "../types";
 
 interface GuestbookFormProps {
   onEntryAdded: () => void;
@@ -159,16 +163,21 @@ const GuestbookForm: React.FC<GuestbookFormProps> = ({ onEntryAdded }) => {
               >
                 Business Unit <span className="text-red-500">*</span>
               </label>
-              <input
-                type="text"
+              <select
                 id="tujuan_bu"
                 name="tujuan_bu"
                 value={formData.tujuan_bu}
                 onChange={handleChange}
-                className="w-full px-4 py-3 placeholder-gray-400 transition-all duration-300 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-yellow focus:border-corporate-yellow text-corporate-black"
+                className="w-full px-4 py-3 transition-all duration-300 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-corporate-yellow focus:border-corporate-yellow text-corporate-black"
                 required
-                placeholder="Target business unit"
-              />
+              >
+                <option value="">Select business unit</option>
+                {BUSINESS_UNIT_OPTIONS.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="space-y-2">
               <label
